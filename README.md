@@ -1,92 +1,88 @@
 # KOReader GPT Plugin
 
-A plugin for KOReader that adds GPT capabilities through OpenRouter API integration. Select text in your books and quickly get explanations, translations, summaries, and more using various AI models.
+A plugin for KOReader that enhances your reading experience by adding AI capabilities through OpenRouter API integration. Select text from to get explanations, translations, summaries or custom prompt.
+
+
+Created as a hobby, this project is still evolving, with 99% of the code written by AI.
+
+
+☕ Buy me a coffe https://ko-fi.com/oneofusall
 
 ## Features
 
-- Integrates with KOReader's text selection menu
-- Dynamic model selection from OpenRouter's available models
-- Custom task creation and management
-- Response caching
-- Settings persistence
-- Configurable system prompts
+- Seamless integration with KOReader's text selection menu
+- Support for multiple AI models through OpenRouter
+- Shows pricing for each model ($/M input tokens $/M output tokens)
+- Send custom prompt
+- Translate selected text to any language
+- Configurable system prompt
+- Configurable translation prompt
+- Ask follow-up guestions
+
 
 ## Installation
 
-1. Copy the `koreader-gpt` folder to your KOReader plugins directory:
+1. Create a folder named `askgpt.koplugin` in your KOReader plugins directory:
    ```
-   /path/to/koreader/plugins/
+   /media/x/KOBOeReader/.adds/koreader/plugins/askgpt.koplugin
    ```
 
-2. Restart KOReader
+2. Copy all plugin files into the `askgpt.koplugin` directory
 
-3. Configure the plugin:
-   - Go to Settings
+3. Restart KOReader
+
+4. Configure the plugin:
+   - Enable WIFI
+   - Go to Settings -> More tools -> GPT Settings
    - Enter your OpenRouter API key
-   - Select your preferred model from the available models list
-   - Customize the system prompt if desired
+   - Select your preferred model
+
+
+## Setting Up API Key and System Prompt
+
+For the best experience, prepare these on your computer before configuring the plugin:
+
+1. API Key Setup:
+   - Create a text file on your computer
+   - Save your OpenRouter API key in it
+   - Transfer this file to your e-reader
+   - Open the file and copy the API key
+   - Paste it into the plugin's API key setting
+
+2. System Prompt:
+   - The Default system propt can be changed 
+   - Create and edit your system prompt on your computer
+   - Save it to a text file
+   - Transfer to your e-reader
+   - Copy and paste into the plugin's system prompt setting
+
+This method is recommended as it's easier to edit and manage these settings on a computer rather than directly on the e-reader.
 
 ## Usage
 
-1. Select text in any book
+1. Select any text in your book
 2. Tap "Ask GPT" in the selection menu
-3. Choose a task or enter a custom prompt
-4. View the AI response in a movable window
+3. Choose from four available tasks:
+   - Explain: Get a clear explanation of the selected text
+   - Summarize: Generate a concise summary
+   - Translate: Convert text to any language (customizable)
+   - Custom prompt
+4. View the AI response
+5. Ask follow-up questions
 
-## Creating Custom Tasks
+## Translation Feature
 
-1. Go to the plugin settings
-2. Select "Manage Tasks"
-3. Tap "Add New Task"
-4. Enter:
-   - Task Name (e.g., "Thai Translation")
-   - Prompt (e.g., "Translate this text to modern Thai")
-5. Save the task
+The plugin includes a translation task that can be customized to any target language. Simply specify your desired language when using the translate task (e.g., "Translate to Spanish" or "Translate to Japanese"). There are no language limitations - you can translate to any language. 
 
-Your custom task will now appear in the task list when using the plugin.
+## Model Selection and Limitations
 
-## Default Tasks
-
-- Explain - Get a simple explanation of the selected text
-- Summarize - Get a concise summary
-- Translate to English - Translate the selected text to English
-
-## Model Selection
-
-The plugin dynamically fetches available models from OpenRouter's API. For each model, you can view:
-- Model name and description
-- Context length (maximum tokens)
-- Pricing information (per million tokens)
-  - Prompt cost
-  - Completion cost
-
-To select a model:
-1. Go to Settings
-2. Tap "Select Model"
-3. Choose from the list of available models
-4. Hold on any model to view detailed information
-
-Models are automatically updated when you open the model selector.
-
-## Error Handling
-
-The plugin includes robust error handling for:
-- Network issues
-- Invalid API keys
-- Rate limiting
-- API errors
-- Model fetching failures
-
-## Caching
-
-Responses are cached locally to:
-- Reduce API calls
-- Provide faster responses for repeated queries
-- Work offline for previously queried text
+- Each model has different capabilities and pricing
+- The quality and accuracy of responses depend on the selected model
+- Important: ALL responses mirror the sophistication level of the chosen model
+- Be aware that AI responses may be incorrect or imprecise. 
 
 ## Requirements
 
-- KOReader version 2020.03 or later
 - Internet connection for API calls
 - OpenRouter API key
 
