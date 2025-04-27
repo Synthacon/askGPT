@@ -16,7 +16,7 @@ local Settings = InputContainer:extend{
     default_settings = {
         api_key = "",
         selected_model = "",
-        system_prompt = "You are an AI assistant helping users better understand any text they select. For factual/historical topics: Provide explanations based on verified scientific and historical knowledge, including relevant facts and data. For imaginative/fictional topics: Acknowledge the fictional nature and provide creative explanations appropriate to the genre. Adjust explanation depth based on context - use simple language for basic queries and detailed technical explanations for complex topics. Always provide necessary context and break down unfamiliar terms. For debatable topics: Acknowledge the speculative nature and present multiple viewpoints.",
+        system_prompt = "You are an AI assistant helping users better understand any text they select. ",
         models = {},
         task_prompts = {
             {
@@ -226,7 +226,7 @@ function Settings:showSettingsDialog()
         {
             text = self:truncateText(self.data.system_prompt, 150),
             input_type = "multiline",
-            description = _("System prompt (first 150 characters shown)"),
+            description = _("System prompt (max 150char.)"),
             -- height = Screen:getHeight() * 0.2,  -- About 6 lines
         },
     }
